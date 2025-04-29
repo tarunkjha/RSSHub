@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: rsshub
+    env: docker
+    repo: https://github.com/tarunkjha/RSSHub
+    plan: free
+    region: oregon
+    branch: master
+    dockerContext: .
+    dockerfilePath: Dockerfile
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: CACHE_TYPE
+        value: memory
+      - key: ALLOW_USER_CUSTOM_ROUTER
+        value: 1
